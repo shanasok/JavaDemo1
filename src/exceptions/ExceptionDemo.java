@@ -28,6 +28,8 @@ public class ExceptionDemo {
             } catch (MyCheckedException e) {
                 System.out.println("Caught checked exception: " + e.getMessage());
                 System.out.println(customerName + " takes the pet back to the store.");
+            } finally {
+                System.out.println(customerName + " leaves the store.");
             }
             System.out.println();
         }
