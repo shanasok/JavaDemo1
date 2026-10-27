@@ -5,29 +5,50 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("===== INHERITANCE DEMO =====\n");
 
-        // Polymorphism: every object is stored as an Animal,
-        // but Java calls the version of the method that belongs to the REAL class.
-        Animal[] animals = {
-                new Animal("Generic Animal"),
-                new Mammal("Generic Mammal"),
-                new Bird("Generic Bird"),
-                new Fish("Generic Fish"),
-                new Dog("Rex the Dog"),
-                new Cat("Whiskers the Cat"),
-                new Penguin("Pingu the Penguin"),
-                new Pigeon("Pete the Pigeon"),
-                new Shark("Bruce the Shark"),
-                new Goldfish("Bubbles the Goldfish")
-        };
+//        // Polymorphism: every object is stored as an Animal,
+//        // but Java calls the version of the method that belongs to the REAL class.
+//        Animal[] animals = {
+//                new Animal("Generic Animal"),
+//                new Mammal("Generic Mammal"),
+//                new Bird("Generic Bird"),
+//                new Fish("Generic Fish"),
+//                new Dog("Rex the Dog"),
+//                new Cat("Whiskers the Cat"),
+//                new Penguin("Pingu the Penguin"),
+//                new Pigeon("Pete the Pigeon"),
+//                new Shark("Bruce the Shark"),
+//                new Goldfish("Bubbles the Goldfish")
+//        };
+//
+//        for (Animal animal : animals) {
+//            System.out.println("--- " + animal.getClass().getSimpleName() + " ---");
+//            animal.makeSound();
+//            animal.move();
+//            System.out.println();
+//        }
+//
+//        System.out.println("===== EXCEPTIONS DEMO =====\n");
+//        ExceptionDemo.run();
 
-        for (Animal animal : animals) {
-            System.out.println("--- " + animal.getClass().getSimpleName() + " ---");
-            animal.makeSound();
-            animal.move();
-            System.out.println();
+
+        int i = 9;
+        int j = 9;
+
+        if (i == j)
+            System.out.println("i and j are equal");
+        else
+            System.out.println("i and j are not equal");
+
+        Dog dog1 = new Dog("Rex", "German Shepherd", false);
+        Dog dog2 = new Dog("Rex", "German Shepherd", false);
+        Cat cat1 = new Cat("Whiskers");
+
+//        Dog dog2 = new Dog("Rufus", "Golden Retriever", true);
+
+        if (dog1.equals(dog2)) {
+            System.out.println("The dogs are equal.");
+        } else {
+            System.out.println("The dogs are not equal.");
         }
-
-        System.out.println("===== EXCEPTIONS DEMO =====\n");
-        ExceptionDemo.run();
     }
 }

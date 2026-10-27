@@ -1,0 +1,39 @@
+classDiagram
+    class Member {
+        +isFrozen : boolean
+        +borrow(book: Loanable)
+        +payFees()
+    }
+
+    class Frozen {
+        +isFrozen : boolean
+        +member : Member
+        +reason : String
+    }
+
+    class Loanable {
+        <<interface>>
+    }
+
+    class Book {
+    }
+
+    class Loan {
+        +dueDate : Date
+        +returnDate : Date
+    }
+
+    class Fee {
+        +status : String
+        +currency : String
+        +dateIssued : Date
+        +amount : double
+    }
+
+%% Relationships
+    Loanable <|.. Book : implements
+    Member "1" --> "0..5" Loan : active loans
+    Loan "1" --> "1" Loanable : borrows
+    Loan "1" --> "0..*" Fee : incurs
+    Member "1" --> "0..*" Fee : owes
+    Member "1" <-- "0..1" Frozen : suspends

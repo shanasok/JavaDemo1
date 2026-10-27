@@ -12,4 +12,9 @@ public class Mammal extends Animal {
     public void move() {
         System.out.println(name + " walks on legs.");
     }
+
+    @Override
+    public void eat() {
+        System.out.println(name + " eats food in a mammal kind of way.");
+    }
 }

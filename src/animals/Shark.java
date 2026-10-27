@@ -13,4 +13,10 @@ public class Shark extends Fish {
         super.move(); // runs Fish's move() first
         System.out.println(name + " hunts fast and never stops swimming.");
     }
+
+
+    @Override
+    public void eat() {
+        System.out.println(name + " eats food with lots of sharp teeth.");
+    }
 }
